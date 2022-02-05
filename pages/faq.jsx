@@ -1,5 +1,7 @@
-import Link from "../src/components/Link";
-import PageTitle from "../src/components/PageTitle";
+import FAQScreen from '../src/screens/FAQScreens';
+export default FAQScreen;
+
+ 
 
 export async function getStaticProps() {
 
@@ -15,28 +17,4 @@ export async function getStaticProps() {
             faq
         },
     };
-}
-
-export default function FaqPage({ faq }) {
-
-    return (
-        <div>
-           <PageTitle titulo="FAQ - Alura Cases Campanha"/>
-
-            <h1>Alura Cases - Páginas de Perguntas FAQ</h1>
-            <Link href="/">
-                Ir para Home
-            </Link>
-            <ul>
-                {faq.map(({ answer, question }) => (
-                    <li key={question}>
-                        <article>
-                            <h2>{question}</h2>
-                            <p>{answer}</p>
-                        </article>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
 }
